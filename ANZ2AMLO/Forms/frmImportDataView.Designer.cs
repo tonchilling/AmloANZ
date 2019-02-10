@@ -30,64 +30,67 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportDataView));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ANZ2AMLO.Forms.WaitForm1), true, true);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.col5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.colImported = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFromTotal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRemark = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gdView = new DevExpress.XtraGrid.GridControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFileNameConditon = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtRemark = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.FirstRowIsHeader = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtStartRowCol = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtSheetName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTemplateFile = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.ddlSourceType = new System.Windows.Forms.ComboBox();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPeriod = new DevExpress.XtraEditors.TextEdit();
+            this.ddlReportCondition = new System.Windows.Forms.ComboBox();
+            this.dtTranDate = new System.Windows.Forms.DateTimePicker();
+            this.btnExportFile = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txtMonth = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.gdDetail = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gdView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileNameConditon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FirstRowIsHeader.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStartRowCol.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSheetName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTemplateFile.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMonth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -97,29 +100,39 @@
             this.barButtonItem1,
             this.barButtonItem2,
             this.barButtonItem3});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 3;
             // 
-            // bar2
+            // barDockControlTop
             // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1448, 0);
             // 
-            // barButtonItem3
+            // barDockControlBottom
             // 
-            this.barButtonItem3.Caption = "Process";
-            this.barButtonItem3.Id = 2;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 749);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1448, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 749);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1448, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 749);
             // 
             // barButtonItem1
             // 
@@ -135,298 +148,348 @@
             this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // barDockControlTop
+            // barButtonItem3
             // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1165, 44);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 749);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1165, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 44);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 705);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1165, 44);
-            this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 705);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colNo,
-            this.col1,
-            this.col2,
-            this.col3,
-            this.col4,
-            this.col5,
-            this.colImported,
-            this.colFromTotal,
-            this.colRemark,
-            this.colDID,
-            this.colHID,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4});
-            this.gridView1.GridControl = this.gdView;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colNo
-            // 
-            this.colNo.Caption = "No";
-            this.colNo.FieldName = "No";
-            this.colNo.MaxWidth = 50;
-            this.colNo.Name = "colNo";
-            this.colNo.Visible = true;
-            this.colNo.VisibleIndex = 0;
-            this.colNo.Width = 50;
-            // 
-            // col1
-            // 
-            this.col1.Caption = "Customer KYC ID";
-            this.col1.FieldName = "Date";
-            this.col1.Name = "col1";
-            this.col1.Visible = true;
-            this.col1.VisibleIndex = 1;
-            this.col1.Width = 50;
-            // 
-            // col2
-            // 
-            this.col2.Caption = "Customer Name";
-            this.col2.FieldName = "File Name";
-            this.col2.MaxWidth = 100;
-            this.col2.Name = "col2";
-            this.col2.Visible = true;
-            this.col2.VisibleIndex = 2;
-            // 
-            // col3
-            // 
-            this.col3.Caption = "Customer Status";
-            this.col3.MaxWidth = 50;
-            this.col3.Name = "col3";
-            this.col3.Visible = true;
-            this.col3.VisibleIndex = 3;
-            this.col3.Width = 50;
-            // 
-            // col4
-            // 
-            this.col4.Caption = "Unique identifier";
-            this.col4.MaxWidth = 80;
-            this.col4.Name = "col4";
-            this.col4.Visible = true;
-            this.col4.VisibleIndex = 5;
-            // 
-            // col5
-            // 
-            this.col5.Caption = "Doc Type";
-            this.col5.ColumnEdit = this.btnView;
-            this.col5.MaxWidth = 80;
-            this.col5.Name = "col5";
-            this.col5.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.col5.Visible = true;
-            this.col5.VisibleIndex = 6;
-            // 
-            // btnView
-            // 
-            this.btnView.AutoHeight = false;
-            this.btnView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.btnView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "VIEW", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnView.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnView.Name = "btnView";
-            this.btnView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            // 
-            // colImported
-            // 
-            this.colImported.Caption = "Document Number";
-            this.colImported.MaxWidth = 80;
-            this.colImported.Name = "colImported";
-            this.colImported.Visible = true;
-            this.colImported.VisibleIndex = 7;
-            // 
-            // colFromTotal
-            // 
-            this.colFromTotal.Caption = "Principle address";
-            this.colFromTotal.FieldName = "colFromTotal";
-            this.colFromTotal.MaxWidth = 80;
-            this.colFromTotal.Name = "colFromTotal";
-            this.colFromTotal.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.colFromTotal.Visible = true;
-            this.colFromTotal.VisibleIndex = 8;
-            // 
-            // colRemark
-            // 
-            this.colRemark.Caption = "City";
-            this.colRemark.FieldName = "FileCount";
-            this.colRemark.MaxWidth = 80;
-            this.colRemark.Name = "colRemark";
-            this.colRemark.Visible = true;
-            this.colRemark.VisibleIndex = 4;
-            // 
-            // colDID
-            // 
-            this.colDID.Caption = "DID";
-            this.colDID.FieldName = "DID";
-            this.colDID.MinWidth = 10;
-            this.colDID.Name = "colDID";
-            // 
-            // colHID
-            // 
-            this.colHID.Caption = "HID";
-            this.colHID.FieldName = "HID";
-            this.colHID.Name = "colHID";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "State";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 9;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Zipcode";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 10;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Country";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 11;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Contract Number";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 12;
-            // 
-            // gdView
-            // 
-            this.gdView.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
-            this.gdView.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
-            this.gdView.Location = new System.Drawing.Point(0, 108);
-            this.gdView.MainView = this.gridView1;
-            this.gdView.Name = "gdView";
-            this.gdView.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.btnView});
-            this.gdView.Size = new System.Drawing.Size(1165, 641);
-            this.gdView.TabIndex = 13;
-            this.gdView.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(532, 5);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(30, 13);
-            this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "Period";
+            this.barButtonItem3.Caption = "Process";
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.textEdit4);
-            this.panelControl1.Controls.Add(this.textEdit3);
-            this.panelControl1.Controls.Add(this.textEdit1);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.groupBox1);
+            this.panelControl1.Controls.Add(this.ddlSourceType);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.textEdit2);
-            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Controls.Add(this.txtPeriod);
+            this.panelControl1.Controls.Add(this.ddlReportCondition);
+            this.panelControl1.Controls.Add(this.dtTranDate);
+            this.panelControl1.Controls.Add(this.btnExportFile);
+            this.panelControl1.Controls.Add(this.btnSearch);
+            this.panelControl1.Controls.Add(this.labelControl4);
+            this.panelControl1.Controls.Add(this.txtMonth);
+            this.panelControl1.Controls.Add(this.labelControl5);
+            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.labelControl7);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 44);
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1165, 64);
+            this.panelControl1.Size = new System.Drawing.Size(1448, 230);
             this.panelControl1.TabIndex = 14;
             // 
-            // textEdit4
+            // groupBox1
             // 
-            this.textEdit4.EditValue = "1 st/ 2nd";
-            this.textEdit4.Location = new System.Drawing.Point(532, 25);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(111, 20);
-            this.textEdit4.TabIndex = 18;
+            this.groupBox1.Controls.Add(this.txtFileNameConditon);
+            this.groupBox1.Controls.Add(this.labelControl11);
+            this.groupBox1.Controls.Add(this.simpleButton2);
+            this.groupBox1.Controls.Add(this.simpleButton1);
+            this.groupBox1.Controls.Add(this.txtRemark);
+            this.groupBox1.Controls.Add(this.labelControl10);
+            this.groupBox1.Controls.Add(this.FirstRowIsHeader);
+            this.groupBox1.Controls.Add(this.labelControl9);
+            this.groupBox1.Controls.Add(this.txtStartRowCol);
+            this.groupBox1.Controls.Add(this.labelControl8);
+            this.groupBox1.Controls.Add(this.txtSheetName);
+            this.groupBox1.Controls.Add(this.labelControl2);
+            this.groupBox1.Controls.Add(this.txtTemplateFile);
+            this.groupBox1.Controls.Add(this.labelControl1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(2, 115);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1444, 113);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detail";
             // 
-            // textEdit3
+            // txtFileNameConditon
             // 
-            this.textEdit3.EditValue = "10-Oct";
-            this.textEdit3.Location = new System.Drawing.Point(415, 24);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(111, 20);
-            this.textEdit3.TabIndex = 17;
+            this.txtFileNameConditon.Enabled = false;
+            this.txtFileNameConditon.Location = new System.Drawing.Point(707, 42);
+            this.txtFileNameConditon.MenuManager = this.barManager1;
+            this.txtFileNameConditon.Name = "txtFileNameConditon";
+            this.txtFileNameConditon.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFileNameConditon.Properties.Appearance.Options.UseFont = true;
+            this.txtFileNameConditon.Size = new System.Drawing.Size(214, 26);
+            this.txtFileNameConditon.TabIndex = 31;
             // 
-            // textEdit1
+            // labelControl11
             // 
-            this.textEdit1.EditValue = "16/10/2018";
-            this.textEdit1.Location = new System.Drawing.Point(288, 24);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(121, 20);
-            this.textEdit1.TabIndex = 16;
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(707, 20);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(114, 16);
+            this.labelControl11.TabIndex = 30;
+            this.labelControl11.Text = "File Name Condition";
             // 
-            // labelControl4
+            // simpleButton2
             // 
-            this.labelControl4.Location = new System.Drawing.Point(415, 6);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(30, 13);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Month";
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Location = new System.Drawing.Point(1308, 40);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(126, 32);
+            this.simpleButton2.TabIndex = 29;
+            this.simpleButton2.Text = "View Mapping";
             // 
-            // labelControl3
+            // simpleButton1
             // 
-            this.labelControl3.Location = new System.Drawing.Point(288, 6);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(82, 13);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Transection Date";
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Location = new System.Drawing.Point(1157, 40);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(148, 32);
+            this.simpleButton1.TabIndex = 28;
+            this.simpleButton1.Text = "View Template File";
             // 
-            // textEdit2
+            // txtRemark
             // 
-            this.textEdit2.EditValue = "Cutomer Siebel";
-            this.textEdit2.Location = new System.Drawing.Point(12, 25);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(270, 20);
-            this.textEdit2.TabIndex = 3;
+            this.txtRemark.Enabled = false;
+            this.txtRemark.Location = new System.Drawing.Point(927, 42);
+            this.txtRemark.MenuManager = this.barManager1;
+            this.txtRemark.Name = "txtRemark";
+            this.txtRemark.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemark.Properties.Appearance.Options.UseFont = true;
+            this.txtRemark.Size = new System.Drawing.Size(224, 26);
+            this.txtRemark.TabIndex = 27;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(927, 20);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(45, 16);
+            this.labelControl10.TabIndex = 26;
+            this.labelControl10.Text = "Remark";
+            // 
+            // FirstRowIsHeader
+            // 
+            this.FirstRowIsHeader.Enabled = false;
+            this.FirstRowIsHeader.Location = new System.Drawing.Point(589, 42);
+            this.FirstRowIsHeader.MenuManager = this.barManager1;
+            this.FirstRowIsHeader.Name = "FirstRowIsHeader";
+            this.FirstRowIsHeader.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstRowIsHeader.Properties.Appearance.Options.UseFont = true;
+            this.FirstRowIsHeader.Size = new System.Drawing.Size(109, 26);
+            this.FirstRowIsHeader.TabIndex = 25;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(589, 20);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(109, 16);
+            this.labelControl9.TabIndex = 24;
+            this.labelControl9.Text = "First row is Header";
+            // 
+            // txtStartRowCol
+            // 
+            this.txtStartRowCol.Enabled = false;
+            this.txtStartRowCol.Location = new System.Drawing.Point(475, 42);
+            this.txtStartRowCol.MenuManager = this.barManager1;
+            this.txtStartRowCol.Name = "txtStartRowCol";
+            this.txtStartRowCol.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStartRowCol.Properties.Appearance.Options.UseFont = true;
+            this.txtStartRowCol.Size = new System.Drawing.Size(108, 26);
+            this.txtStartRowCol.TabIndex = 23;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(475, 20);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(108, 16);
+            this.labelControl8.TabIndex = 22;
+            this.labelControl8.Text = "Start Row, Column";
+            // 
+            // txtSheetName
+            // 
+            this.txtSheetName.Enabled = false;
+            this.txtSheetName.Location = new System.Drawing.Point(257, 42);
+            this.txtSheetName.MenuManager = this.barManager1;
+            this.txtSheetName.Name = "txtSheetName";
+            this.txtSheetName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSheetName.Properties.Appearance.Options.UseFont = true;
+            this.txtSheetName.Size = new System.Drawing.Size(212, 26);
+            this.txtSheetName.TabIndex = 21;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 6);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(257, 20);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(113, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Source File Ref. Name :";
+            this.labelControl2.Size = new System.Drawing.Size(70, 16);
+            this.labelControl2.TabIndex = 20;
+            this.labelControl2.Text = "Sheet Name";
+            // 
+            // txtTemplateFile
+            // 
+            this.txtTemplateFile.Enabled = false;
+            this.txtTemplateFile.Location = new System.Drawing.Point(39, 42);
+            this.txtTemplateFile.MenuManager = this.barManager1;
+            this.txtTemplateFile.Name = "txtTemplateFile";
+            this.txtTemplateFile.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTemplateFile.Properties.Appearance.Options.UseFont = true;
+            this.txtTemplateFile.Size = new System.Drawing.Size(212, 26);
+            this.txtTemplateFile.TabIndex = 19;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(39, 20);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(78, 16);
+            this.labelControl1.TabIndex = 16;
+            this.labelControl1.Text = "Template File";
+            // 
+            // ddlSourceType
+            // 
+            this.ddlSourceType.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlSourceType.FormattingEnabled = true;
+            this.ddlSourceType.Location = new System.Drawing.Point(168, 47);
+            this.ddlSourceType.Name = "ddlSourceType";
+            this.ddlSourceType.Size = new System.Drawing.Size(573, 27);
+            this.ddlSourceType.TabIndex = 26;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(51, 50);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(111, 19);
+            this.labelControl3.TabIndex = 25;
+            this.labelControl3.Text = "Source Type :";
+            // 
+            // txtPeriod
+            // 
+            this.txtPeriod.Enabled = false;
+            this.txtPeriod.Location = new System.Drawing.Point(650, 83);
+            this.txtPeriod.MenuManager = this.barManager1;
+            this.txtPeriod.Name = "txtPeriod";
+            this.txtPeriod.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeriod.Properties.Appearance.Options.UseFont = true;
+            this.txtPeriod.Size = new System.Drawing.Size(91, 26);
+            this.txtPeriod.TabIndex = 24;
+            // 
+            // ddlReportCondition
+            // 
+            this.ddlReportCondition.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ddlReportCondition.FormattingEnabled = true;
+            this.ddlReportCondition.Location = new System.Drawing.Point(168, 14);
+            this.ddlReportCondition.Name = "ddlReportCondition";
+            this.ddlReportCondition.Size = new System.Drawing.Size(573, 27);
+            this.ddlReportCondition.TabIndex = 23;
+            this.ddlReportCondition.SelectedIndexChanged += new System.EventHandler(this.ddlReportCondition_SelectedIndexChanged);
+            // 
+            // dtTranDate
+            // 
+            this.dtTranDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtTranDate.Location = new System.Drawing.Point(168, 80);
+            this.dtTranDate.Name = "dtTranDate";
+            this.dtTranDate.Size = new System.Drawing.Size(202, 27);
+            this.dtTranDate.TabIndex = 22;
+            this.dtTranDate.ValueChanged += new System.EventHandler(this.dtTranDate_ValueChanged);
+            // 
+            // btnExportFile
+            // 
+            this.btnExportFile.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportFile.Appearance.Options.UseFont = true;
+            this.btnExportFile.Location = new System.Drawing.Point(877, 13);
+            this.btnExportFile.Name = "btnExportFile";
+            this.btnExportFile.Size = new System.Drawing.Size(110, 60);
+            this.btnExportFile.TabIndex = 21;
+            this.btnExportFile.Text = "Export Excel";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Appearance.Options.UseFont = true;
+            this.btnSearch.Location = new System.Drawing.Point(760, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(111, 62);
+            this.btnSearch.TabIndex = 20;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(580, 86);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(64, 19);
+            this.labelControl4.TabIndex = 19;
+            this.labelControl4.Text = "Period :";
+            // 
+            // txtMonth
+            // 
+            this.txtMonth.Enabled = false;
+            this.txtMonth.Location = new System.Drawing.Point(454, 81);
+            this.txtMonth.MenuManager = this.barManager1;
+            this.txtMonth.Name = "txtMonth";
+            this.txtMonth.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMonth.Properties.Appearance.Options.UseFont = true;
+            this.txtMonth.Size = new System.Drawing.Size(104, 26);
+            this.txtMonth.TabIndex = 18;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(386, 83);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(62, 19);
+            this.labelControl5.TabIndex = 17;
+            this.labelControl5.Text = "Month :";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(12, 83);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(151, 19);
+            this.labelControl6.TabIndex = 16;
+            this.labelControl6.Text = "Transection Date :";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(12, 12);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(150, 19);
+            this.labelControl7.TabIndex = 15;
+            this.labelControl7.Text = "Report Condition :";
+            // 
+            // gdDetail
+            // 
+            this.gdDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gdDetail.Location = new System.Drawing.Point(0, 230);
+            this.gdDetail.MainView = this.gridView1;
+            this.gdDetail.Name = "gdDetail";
+            this.gdDetail.Size = new System.Drawing.Size(1448, 519);
+            this.gdDetail.TabIndex = 19;
+            this.gdDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gdDetail;
+            this.gridView1.Name = "gridView1";
             // 
             // frmImportDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1165, 749);
-            this.Controls.Add(this.gdView);
+            this.ClientSize = new System.Drawing.Size(1448, 749);
+            this.Controls.Add(this.gdDetail);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -435,17 +498,23 @@
             this.Name = "frmImportDataView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Data";
+            this.Load += new System.EventHandler(this.frmImportDataView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gdView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileNameConditon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemark.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FirstRowIsHeader.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStartRowCol.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSheetName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTemplateFile.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMonth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gdDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +523,6 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
@@ -462,32 +530,36 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraGrid.GridControl gdView;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNo;
-        private DevExpress.XtraGrid.Columns.GridColumn col1;
-        private DevExpress.XtraGrid.Columns.GridColumn col2;
-        private DevExpress.XtraGrid.Columns.GridColumn col3;
-        private DevExpress.XtraGrid.Columns.GridColumn col4;
-        private DevExpress.XtraGrid.Columns.GridColumn col5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnView;
-        private DevExpress.XtraGrid.Columns.GridColumn colImported;
-        private DevExpress.XtraGrid.Columns.GridColumn colFromTotal;
-        private DevExpress.XtraGrid.Columns.GridColumn colRemark;
-        private DevExpress.XtraGrid.Columns.GridColumn colDID;
-        private DevExpress.XtraGrid.Columns.GridColumn colHID;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtPeriod;
+        private System.Windows.Forms.ComboBox ddlReportCondition;
+        private System.Windows.Forms.DateTimePicker dtTranDate;
+        private DevExpress.XtraEditors.SimpleButton btnExportFile;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txtMonth;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private System.Windows.Forms.ComboBox ddlSourceType;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraGrid.GridControl gdDetail;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.TextEdit txtSheetName;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtTemplateFile;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtRemark;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit FirstRowIsHeader;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtStartRowCol;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit txtFileNameConditon;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }

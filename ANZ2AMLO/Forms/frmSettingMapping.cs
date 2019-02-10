@@ -103,7 +103,7 @@ namespace ANZ2AMLO.Forms
         {
 
             bal = new SourceFile_MappingHeaderBAL();
-            ds = bal.FindHeaderAndDetailPK(null);
+            ds = bal.FindHeaderAndDetailPK("1");
             if (ds != null)
             {
                 dtH = ds.Tables[0];
@@ -123,6 +123,9 @@ namespace ANZ2AMLO.Forms
             gridView2.OptionsNavigation.EnterMoveNextColumn = true;
             
         }
+
+      
+
 
         void SetupHeader(DataTable dt)
         {

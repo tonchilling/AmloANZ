@@ -79,7 +79,24 @@ namespace BAL.Amlo.Trans
             return dao.FindByKeyWord(keyWord);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="keyWord"></param>
+        /// <param name="createDate">Datetime</param>
+        /// <returns></returns>
+        public DataTable FindByKeyWord(string keyWord,string createDate)
+        {
 
+            return dao.FindByKeyWord(keyWord, createDate);
+        }
+
+        public DataTable FindByKeyWord(string keyWord, DateTime createDate)
+        {
+
+            string yyyyMMdd = string.Format("{0}{1}{2}", createDate.Year.ToString(),createDate.Month.ToString("##00"), createDate.Day.ToString("##00"));
+            return dao.FindByKeyWord(keyWord, yyyyMMdd);
+        }
         public DataTable GetDropDownList()
         {
             utilDAL = new UtilDAL();

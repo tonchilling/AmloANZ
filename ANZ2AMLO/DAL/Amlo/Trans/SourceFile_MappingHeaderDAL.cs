@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using DTO.Amlo.Importing;
 using DAL;
 using DTO.Amlo.Trans;
+using System.Data.SqlClient;
 
 namespace DAL.Amlo.Trans
 {
@@ -198,6 +199,30 @@ namespace DAL.Amlo.Trans
             { }
             return dtObj;
         }
+
+        public DataTable FindByKeyWord(string tbName, string createDate)
+        {
+            isCan = false;
+            DataTable dtObj = null;
+            List<SqlParameter> paramList = null;
+            SqlParameter parameters = null;
+            try
+            {
+                paramList = new List<SqlParameter>();
+                parameters = new SqlParameter("@CreateDate", createDate);
+
+                paramList.Add(parameters);
+                OpenConection();
+                dtObj = ExcecuteParamToDataTable(string.Format("sp_{0}_FindByPK", tbName), paramList);
+                CloseConnection();
+            }
+            catch (Exception ex)
+            { }
+            finally
+            { }
+            return dtObj;
+        }
+
 
         public DataSet  FindHeaderAndDetailPK(DataTable dt)
         {

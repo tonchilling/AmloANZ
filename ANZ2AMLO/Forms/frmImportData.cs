@@ -372,6 +372,11 @@ namespace ANZ1AMLO.Forms
             LoadMonth();
         }
 
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void gdView_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
 

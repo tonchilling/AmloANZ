@@ -349,15 +349,15 @@
             this.popDetail.Controls.Add(this.btnClosePop);
             this.popDetail.Controls.Add(this.groupBox2);
             this.popDetail.Controls.Add(this.groupBox1);
-            this.popDetail.Location = new System.Drawing.Point(0, 40);
+            this.popDetail.Location = new System.Drawing.Point(7, 73);
             this.popDetail.Name = "popDetail";
-            this.popDetail.Size = new System.Drawing.Size(1127, 535);
+            this.popDetail.Size = new System.Drawing.Size(1115, 540);
             this.popDetail.TabIndex = 22;
             // 
             // btnClosePop
             // 
             this.btnClosePop.EditValue = "CLOSE";
-            this.btnClosePop.Location = new System.Drawing.Point(1073, 8);
+            this.btnClosePop.Location = new System.Drawing.Point(1065, 8);
             this.btnClosePop.Name = "btnClosePop";
             this.btnClosePop.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnClosePop.Properties.Appearance.Options.UseFont = true;

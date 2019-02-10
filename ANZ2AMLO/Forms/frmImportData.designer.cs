@@ -774,6 +774,7 @@
             this.btnVerify.Size = new System.Drawing.Size(170, 65);
             this.btnVerify.TabIndex = 19;
             this.btnVerify.Text = "Verify Existing File";
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
             // panelControl3
             // 
