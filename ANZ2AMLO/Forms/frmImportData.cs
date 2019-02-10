@@ -15,6 +15,8 @@ using DevExpress.XtraEditors;
 using DevExpress.Xpf.Core;
 using DevExpress.XtraSplashScreen;
 using DTO.Amlo.Export;
+using DTO.Amlo.Autorizing;
+
 namespace ANZ1AMLO.Forms
 {
     public partial class frmImportData : Form
@@ -25,10 +27,13 @@ namespace ANZ1AMLO.Forms
         DataTable dtH, dtDetail,dtDetail_Col;
         ImportTempBAL importBal = null;
         string browseFolder = "";
-       List<string> allFile;
+        List<string> allFile;
         List<ImportDTO> dsAll = null;
         ImportDTO tempDetailDTO = null;
         string lbStatus = "";
+        string currDID = "";
+        String currDIDDesc = "";
+
         public frmImportData()
         {
             InitializeComponent();
@@ -57,6 +62,7 @@ namespace ANZ1AMLO.Forms
 
         void InitailData()
         {
+            btnImport.Enabled = false;
             dsAll = new List<ImportDTO>();
             allFile = new List<string>();
             bal = new SourceFile_MappingHeaderBAL();
@@ -67,6 +73,8 @@ namespace ANZ1AMLO.Forms
             ddlReportCondition.ValueMember = "Value";
             ddlReportCondition.SelectedIndex = 1;
 
+            currDID = ddlReportCondition.SelectedValue.ToString();
+            currDIDDesc = ddlReportCondition.SelectedText.ToString();
             LoadMonth();
              ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString());
 
@@ -78,17 +86,9 @@ namespace ANZ1AMLO.Forms
 
                 SetupHeader(dtH);
                 LoadDetail(dtDetail);
-
-
-
-
+                
             }
-
-
-           
-
-
-
+            
             gridView1.RowCellStyle += GridView1_RowCellStyle;
 
         }
@@ -136,16 +136,25 @@ namespace ANZ1AMLO.Forms
         }
 
 
-        void ImportFiles()
+        void VerifyExistingFile()
         {
-
+            allFile = new List<string>();
+            dsAll = new List<ImportDTO>();
             DataTable tempHeaderDT, tempDetailDT;
             ImportDTO importDTO = null;
             string[] filePaths = null;
+            DataTable dtTImportHeader = ImportDTO.ImportHeaderData();
+            DataTable dtTImportDetail = ImportDTO.ImportDetailData();
 
-
-            if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to import files?", "IMPORTING", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to Verify Existing File?", "Verify Existing File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                DataRow drTImportHeader = dtTImportHeader.NewRow();
+                drTImportHeader["SourceFileHID"] = currDID;
+                drTImportHeader["TranDate"] = dtTranDate.Value.Year.ToString() + dtTranDate.Value.Month.ToString().PadLeft(2,'0') + dtTranDate.Value.Day.ToString().PadLeft(2, '0');
+                DateTime nowDate = DateTime.Now;
+                drTImportHeader["ReportName"] = currDIDDesc + "_ImportSourceFiles_" + string.Format("{0}{1}{2}", nowDate.Year.ToString(), nowDate.Month.ToString("##00"), nowDate.Day.ToString("##00"));
+                drTImportHeader["CREATE_BY"] = MyLogin.USER_LOGIN;
+                dtTImportHeader.Rows.Add(drTImportHeader);
 
                 pStatus.Visible = true;
                 splashScreenManager1.ShowWaitForm();
@@ -173,7 +182,7 @@ namespace ANZ1AMLO.Forms
                             {
                                 dr["FileCount"] = selectFile.Count;
                                 dr["FileNameList"] = selectFile[0];
-                                dr["Imported"] = "N";
+                                dr["Import"] = "N";
 
 
                                 tempHeaderDT.Rows.Add(dr.ItemArray);
@@ -195,21 +204,27 @@ namespace ANZ1AMLO.Forms
                                                                                               dr["StartColumn"].ToString(),
                                                                                              dr["HID"].ToString(), keyWord);
 
-                                dr["Import"] = tempDetailDT.Rows.Count;
+                                dr["FromTotal"] = tempDetailDT.Rows.Count;
                                 ds.Tables.Add(tempDetailDT.Copy());
 
-                                dr["Imported"] = tempDetailDT.Rows.Count;
+
                                 importDTO.Data = ds.Copy();
                                 dsAll.Add(importDTO);
                                 gridView1.SetRowCellValue(row, "FileCount", (object)dr["FileCount"].ToString());
                                 gridView1.SetRowCellValue(row, "FileNameList", (object)dr["FileNameList"].ToString());
-                                gridView1.SetRowCellValue(row, "Imported", (object)dr["Imported"].ToString());
-
+                                
+                                DataRow drTImportDetail = dtTImportDetail.NewRow();
+                                drTImportDetail["SourceFileDID"] = dr["DID"].ToString();
+                                drTImportDetail["FilesCount"] = selectFile.Count;
+                                drTImportDetail["FileNameList"] = dr["SourceFileRefName"].ToString();
+                                drTImportDetail["HasImport"] = "Y";
+                                drTImportDetail["ImportStatus"] = "P";
+                                drTImportDetail["ImportedRec"] = dr["FromTotal"];
+                                drTImportDetail["TotalRec"] = dr["FromTotal"];
+                                drTImportDetail["CREATE_BY"] = MyLogin.USER_LOGIN;
+                                dtTImportDetail.Rows.Add(drTImportDetail);
                             }
-
-
-
-
+                            
                         }
 
                        
@@ -229,13 +244,13 @@ namespace ANZ1AMLO.Forms
                         LoadDetail(dtDetail);
                      
                         // pStatus.Text = string.Format("Loading : {0}",dr["SourceFileRefName"].ToString());
-                        System.Threading.Thread.Sleep(1000);
+                        System.Threading.Thread.Sleep(500);
 
 
                         dtDetail.AcceptChanges();
 
                     }
-                    DevExpress.XtraEditors.XtraMessageBox.Show("Import files completely!!", "IMPORTING", MessageBoxButtons.OK);
+                    DevExpress.XtraEditors.XtraMessageBox.Show("Verify Existing File completely!!", "Verify Existing File", MessageBoxButtons.OK);
                     lblStatus.Text = string.Format("Loading {0} files completetly!", allFile.Count);
 
                     //  dtDetail.Rows[0]["FileCount"] = "test";
@@ -321,7 +336,7 @@ namespace ANZ1AMLO.Forms
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            ImportFiles();
+            VerifyExistingFile();
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -350,6 +365,8 @@ namespace ANZ1AMLO.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            currDID = ddlReportCondition.SelectedValue.ToString();
+            currDIDDesc = ddlReportCondition.SelectedText.ToString();
             ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString());
 
             if (ds != null)
@@ -372,9 +389,22 @@ namespace ANZ1AMLO.Forms
             LoadMonth();
         }
 
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            importBal = new ImportTempBAL();
+            if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to Import All?", "Import ALL", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                splashScreenManager1.ShowWaitForm();
+                importBal.Import(dsAll);
+                splashScreenManager1.CloseWaitForm();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Import All completely!!", "Import ALL", MessageBoxButtons.OK);
+            }
+        }
+
         private void btnVerify_Click(object sender, EventArgs e)
         {
-
+            VerifyExistingFile();
+            btnImport.Enabled = true;
         }
 
         private void gdView_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)

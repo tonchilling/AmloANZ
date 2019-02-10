@@ -265,6 +265,7 @@
             // colImported
             // 
             this.colImported.Caption = "Imported";
+            this.colImported.FieldName = "Imported";
             this.colImported.MaxWidth = 80;
             this.colImported.Name = "colImported";
             this.colImported.Visible = true;
@@ -273,7 +274,7 @@
             // colFromTotal
             // 
             this.colFromTotal.Caption = "From Total";
-            this.colFromTotal.FieldName = "colFromTotal";
+            this.colFromTotal.FieldName = "FromTotal";
             this.colFromTotal.MaxWidth = 80;
             this.colFromTotal.Name = "colFromTotal";
             this.colFromTotal.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -763,6 +764,7 @@
             this.btnImport.Size = new System.Drawing.Size(170, 65);
             this.btnImport.TabIndex = 20;
             this.btnImport.Text = "Import All";
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnVerify
             // 
