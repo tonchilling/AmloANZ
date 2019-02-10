@@ -467,5 +467,15 @@ namespace ANZ2AMLO.Forms
                 frm.Show();
             }
         }
+
+        private void menuViewImport_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            if (!HaveForm("frmImportDataView"))
+            {
+                frmImportDataView frm = new frmImportDataView();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
     }
 }

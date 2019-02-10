@@ -71,6 +71,7 @@
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.pnLogin = new System.Windows.Forms.Panel();
+            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCancelLogin = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -78,13 +79,13 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.menuViewImport = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControlMain)).BeginInit();
             this.pnLogin.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -240,7 +241,7 @@
             // 
             // navBarControlMain
             // 
-            this.navBarControlMain.ActiveGroup = this.navBarAuthorize;
+            this.navBarControlMain.ActiveGroup = this.navBarGroup1;
             this.navBarControlMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.navBarControlMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControlMain.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
@@ -267,7 +268,8 @@
             this.navBarMenuGroup,
             this.navBarSubMenu,
             this.navBarMenuPermission,
-            this.navBarItemUserProfile});
+            this.navBarItemUserProfile,
+            this.menuViewImport});
             this.navBarControlMain.Location = new System.Drawing.Point(0, 24);
             this.navBarControlMain.Name = "navBarControlMain";
             this.navBarControlMain.OptionsNavPane.ExpandedWidth = 214;
@@ -279,7 +281,6 @@
             // navBarAuthorize
             // 
             this.navBarAuthorize.Caption = "Authorize";
-            this.navBarAuthorize.Expanded = true;
             this.navBarAuthorize.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarAuthorize.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarUserGroup),
@@ -331,9 +332,11 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Import File";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navImportAll)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navImportAll),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.menuViewImport)});
             this.navBarGroup1.Name = "navBarGroup1";
             // 
             // navImportAll
@@ -462,6 +465,20 @@
             this.pnLogin.Size = new System.Drawing.Size(497, 324);
             this.pnLogin.TabIndex = 23;
             // 
+            // pictureEdit2
+            // 
+            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
+            this.pictureEdit2.Location = new System.Drawing.Point(29, 16);
+            this.pictureEdit2.Name = "pictureEdit2";
+            this.pictureEdit2.Properties.AllowFocused = false;
+            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit2.Properties.ShowMenu = false;
+            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit2.Size = new System.Drawing.Size(426, 140);
+            this.pictureEdit2.TabIndex = 33;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnCancelLogin);
@@ -549,19 +566,12 @@
             this.txtUserName.Size = new System.Drawing.Size(258, 30);
             this.txtUserName.TabIndex = 32;
             // 
-            // pictureEdit2
+            // menuViewImport
             // 
-            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(29, 16);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.AllowFocused = false;
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Properties.ShowMenu = false;
-            this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit2.Size = new System.Drawing.Size(426, 140);
-            this.pictureEdit2.TabIndex = 33;
+            this.menuViewImport.Caption = "View Import";
+            this.menuViewImport.ImageOptions.ImageUri.Uri = "Preview";
+            this.menuViewImport.Name = "menuViewImport";
+            this.menuViewImport.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.menuViewImport_LinkClicked);
             // 
             // frmMain
             // 
@@ -588,9 +598,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControlMain)).EndInit();
             this.pnLogin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -646,5 +656,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarMenuPermission;
         private DevExpress.XtraNavBar.NavBarItem navBarItemUserProfile;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
+        private DevExpress.XtraNavBar.NavBarItem menuViewImport;
     }
 }
