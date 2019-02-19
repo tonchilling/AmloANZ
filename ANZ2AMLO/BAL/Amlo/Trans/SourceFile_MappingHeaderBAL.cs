@@ -136,11 +136,12 @@ namespace BAL.Amlo.Trans
             return dao.FindByColumn(dt);
         }
 
-        public  DataSet FindHeaderAndDetailPK(string HID)
+        public  DataSet FindHeaderAndDetailPK(string HID, string userName)
         {
             dt = SourceFile_MappingHeaderDto.Data();
             dr = dt.NewRow();
             dr["HID"] = HID;
+            dr["UPDATE_BY"] = userName;
             dt.Rows.Add(dr);
             return dao.FindHeaderAndDetailPK(dt);
         }
