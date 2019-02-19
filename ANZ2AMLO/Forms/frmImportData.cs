@@ -68,7 +68,10 @@ namespace ANZ1AMLO.Forms
             bal = new SourceFile_MappingHeaderBAL();
 
             DataTable dtHeaderSearch = bal.GetDropDownList();
-            dtHeaderSearch.Rows.RemoveAt(0);
+            if (dtHeaderSearch.Rows.Count > 1)
+            {                
+                dtHeaderSearch.Rows.RemoveAt(0); //remove please select
+            }
             ddlReportCondition.DataSource = dtHeaderSearch;
             ddlReportCondition.DisplayMember = "Text";
             ddlReportCondition.ValueMember = "Value";
