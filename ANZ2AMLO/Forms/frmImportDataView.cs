@@ -15,12 +15,13 @@ using DevExpress.XtraEditors;
 using DevExpress.Xpf.Core;
 using DevExpress.XtraSplashScreen;
 using DTO.Amlo.Export;
+using DTO.Amlo.Autorizing;
 
 namespace ANZ2AMLO.Forms
 {
     public partial class frmImportDataView : DevExpress.XtraEditors.XtraForm
     {
-
+        SourceFile_MappingDetailColumnBAL blSourceFileMappingDetailColumn = new SourceFile_MappingDetailColumnBAL();
 
         SourceFile_MappingHeaderBAL bal = null;
         DataSet ds = null;
@@ -54,6 +55,8 @@ namespace ANZ2AMLO.Forms
 
             LoadMonth();
             LoadSourcetType(ddlReportCondition.SelectedValue.ToString());
+
+            pnViewMapping.Visible = false;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -78,7 +81,7 @@ namespace ANZ2AMLO.Forms
             allFile = new List<string>();
 
          //   bal = new SourceFile_MappingHeaderBAL();
-            ds = bal.FindHeaderAndDetailPK(reportSourceID);
+            ds = bal.FindHeaderAndDetailPK(reportSourceID, MyLogin.USER_LOGIN);
 
             if (ds != null)
             {
@@ -108,6 +111,33 @@ namespace ANZ2AMLO.Forms
         private void dtTranDate_ValueChanged(object sender, EventArgs e)
         {
             LoadMonth();
+        }
+
+        private void btnViewMapping_Click(object sender, EventArgs e)
+        {
+            DataView dvDetail = new DataView(dtDetail);
+            dvDetail.RowFilter = string.Format("KeyWord='{0}'", ddlSourceType.SelectedValue.ToString());
+            string currentDID = "";
+            if (dvDetail.Count > 0)
+            {
+                currentDID = dvDetail[0]["DID"].ToString();
+            }
+            if (!"".Equals(currentDID))
+            {
+                DataTable dt = blSourceFileMappingDetailColumn.FindByColumn(currentDID, "");
+                gridViewMapping.DataSource = dt;
+                gridViewMapping.RefreshDataSource();
+                pnViewMapping.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select Source Type", ".:View Mapping");
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            pnViewMapping.Visible = false;
         }
 
         void LoadMonth()
