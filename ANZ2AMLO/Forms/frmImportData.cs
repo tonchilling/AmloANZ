@@ -68,29 +68,47 @@ namespace ANZ1AMLO.Forms
             bal = new SourceFile_MappingHeaderBAL();
 
             DataTable dtHeaderSearch = bal.GetDropDownList();
+            if (dtHeaderSearch.Rows.Count > 1)
+            {                
+                dtHeaderSearch.Rows.RemoveAt(0); //remove please select
+            }
             ddlReportCondition.DataSource = dtHeaderSearch;
             ddlReportCondition.DisplayMember = "Text";
             ddlReportCondition.ValueMember = "Value";
-            ddlReportCondition.SelectedIndex = 1;
+            ddlReportCondition.SelectedIndex = 0;
 
             currDID = ddlReportCondition.SelectedValue.ToString();
             currDIDDesc = ddlReportCondition.SelectedText.ToString();
             LoadMonth();
-             ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString());
+            ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString(), MyLogin.USER_LOGIN);
 
             if (ds != null)
             {
                 dtH = ds.Tables[0];
                 dtDetail = ds.Tables[1];
                 dtDetail_Col= ds.Tables[2];
-
+                DataTable lastedImportDT = ds.Tables[3];
                 SetupHeader(dtH);
                 LoadDetail(dtDetail);
-                
+                fillLastedImportData(lastedImportDT);
             }
             
-            gridView1.RowCellStyle += GridView1_RowCellStyle;
+            gridView1.RowCellStyle += GridView1_RowCellStyle;            
+        }
 
+        void fillLastedImportData(DataTable lastedImportDT)
+        {
+            lblCreateUser.Text = MyLogin.FName + " " + MyLogin.LName;
+            if (lastedImportDT.Rows.Count > 0)
+            {
+                lblCreateDate.Text = lastedImportDT.Rows[0]["UPDATE_DATE"].ToString();
+                lblCreateReportName.Text = lastedImportDT.Rows[0]["ReportName"].ToString();
+            }
+            else
+            {
+                lblCreateDate.Text = "";
+                lblCreateReportName.Text = "";
+            }
         }
 
         void LoadMonth()
@@ -367,7 +385,7 @@ namespace ANZ1AMLO.Forms
         {
             currDID = ddlReportCondition.SelectedValue.ToString();
             currDIDDesc = ddlReportCondition.SelectedText.ToString();
-            ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString());
+            ds = bal.FindHeaderAndDetailPK(ddlReportCondition.SelectedValue.ToString(), MyLogin.USER_LOGIN);
 
             if (ds != null)
             {
@@ -378,9 +396,8 @@ namespace ANZ1AMLO.Forms
                 SetupHeader(dtH);
                 LoadDetail(dtDetail);
 
-
-
-
+                DataTable lastedImportDT = ds.Tables[3];
+                fillLastedImportData(lastedImportDT);
             }
         }
 

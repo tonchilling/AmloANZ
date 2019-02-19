@@ -29,7 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportDataView));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.btnDeleteDetailColumn = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ANZ2AMLO.Forms.WaitForm1), true, true);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -43,7 +55,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtFileNameConditon = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnViewMapping = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtRemark = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -69,6 +81,22 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.gdDetail = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pnViewMapping = new System.Windows.Forms.Panel();
+            this.gridViewMapping = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDDID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDColumnNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDColExcel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDParent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDCondtion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDTotalRow = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDStartPosition = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDPositionLength = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDDesc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteDetailColumn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -83,7 +111,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMonth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.pnViewMapping.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMapping)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnDeleteDetailColumn
+            // 
+            this.btnDeleteDetailColumn.AutoHeight = false;
+            this.btnDeleteDetailColumn.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, true, true, true, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnDeleteDetailColumn.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnDeleteDetailColumn.Name = "btnDeleteDetailColumn";
+            this.btnDeleteDetailColumn.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
             // splashScreenManager1
             // 
@@ -180,7 +221,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtFileNameConditon);
             this.groupBox1.Controls.Add(this.labelControl11);
-            this.groupBox1.Controls.Add(this.simpleButton2);
+            this.groupBox1.Controls.Add(this.btnViewMapping);
             this.groupBox1.Controls.Add(this.simpleButton1);
             this.groupBox1.Controls.Add(this.txtRemark);
             this.groupBox1.Controls.Add(this.labelControl10);
@@ -222,15 +263,16 @@
             this.labelControl11.TabIndex = 30;
             this.labelControl11.Text = "File Name Condition";
             // 
-            // simpleButton2
+            // btnViewMapping
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(1308, 40);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(126, 32);
-            this.simpleButton2.TabIndex = 29;
-            this.simpleButton2.Text = "View Mapping";
+            this.btnViewMapping.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewMapping.Appearance.Options.UseFont = true;
+            this.btnViewMapping.Location = new System.Drawing.Point(1308, 40);
+            this.btnViewMapping.Name = "btnViewMapping";
+            this.btnViewMapping.Size = new System.Drawing.Size(126, 32);
+            this.btnViewMapping.TabIndex = 29;
+            this.btnViewMapping.Text = "View Mapping";
+            this.btnViewMapping.Click += new System.EventHandler(this.btnViewMapping_Click);
             // 
             // simpleButton1
             // 
@@ -484,11 +526,164 @@
             this.gridView1.GridControl = this.gdDetail;
             this.gridView1.Name = "gridView1";
             // 
+            // pnViewMapping
+            // 
+            this.pnViewMapping.Controls.Add(this.gridViewMapping);
+            this.pnViewMapping.Controls.Add(this.btnClose);
+            this.pnViewMapping.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnViewMapping.Location = new System.Drawing.Point(0, 230);
+            this.pnViewMapping.Name = "pnViewMapping";
+            this.pnViewMapping.Size = new System.Drawing.Size(1448, 519);
+            this.pnViewMapping.TabIndex = 32;
+            // 
+            // gridViewMapping
+            // 
+            this.gridViewMapping.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.gridViewMapping.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridViewMapping.Location = new System.Drawing.Point(0, 32);
+            this.gridViewMapping.MainView = this.gridView2;
+            this.gridViewMapping.MenuManager = this.barManager1;
+            this.gridViewMapping.Name = "gridViewMapping";
+            this.gridViewMapping.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEdit1});
+            this.gridViewMapping.Size = new System.Drawing.Size(1448, 487);
+            this.gridViewMapping.TabIndex = 31;
+            this.gridViewMapping.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDDID,
+            this.colDNo,
+            this.colDColumnNo,
+            this.colDColExcel,
+            this.colDParent,
+            this.colDCondtion,
+            this.colDTotalRow,
+            this.colDStartPosition,
+            this.colDPositionLength,
+            this.colDDesc});
+            this.gridView2.GridControl = this.gridViewMapping;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView2.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            // 
+            // colDDID
+            // 
+            this.colDDID.Caption = "gridColumn1";
+            this.colDDID.FieldName = "DID";
+            this.colDDID.Name = "colDDID";
+            // 
+            // colDNo
+            // 
+            this.colDNo.Caption = "No";
+            this.colDNo.FieldName = "No";
+            this.colDNo.Name = "colDNo";
+            this.colDNo.OptionsColumn.AllowEdit = false;
+            this.colDNo.Visible = true;
+            this.colDNo.VisibleIndex = 0;
+            // 
+            // colDColumnNo
+            // 
+            this.colDColumnNo.Caption = "No Column";
+            this.colDColumnNo.FieldName = "ColumnNo";
+            this.colDColumnNo.Name = "colDColumnNo";
+            this.colDColumnNo.OptionsColumn.AllowEdit = false;
+            this.colDColumnNo.Visible = true;
+            this.colDColumnNo.VisibleIndex = 1;
+            // 
+            // colDColExcel
+            // 
+            this.colDColExcel.Caption = "Excel Column";
+            this.colDColExcel.FieldName = "ColumnExcel";
+            this.colDColExcel.Name = "colDColExcel";
+            this.colDColExcel.OptionsColumn.AllowEdit = false;
+            this.colDColExcel.Visible = true;
+            this.colDColExcel.VisibleIndex = 2;
+            // 
+            // colDParent
+            // 
+            this.colDParent.Caption = "Parent";
+            this.colDParent.FieldName = "ParentID";
+            this.colDParent.Name = "colDParent";
+            this.colDParent.OptionsColumn.AllowEdit = false;
+            this.colDParent.Visible = true;
+            this.colDParent.VisibleIndex = 3;
+            // 
+            // colDCondtion
+            // 
+            this.colDCondtion.Caption = "Condition";
+            this.colDCondtion.FieldName = "Condition";
+            this.colDCondtion.Name = "colDCondtion";
+            this.colDCondtion.OptionsColumn.AllowEdit = false;
+            this.colDCondtion.Visible = true;
+            this.colDCondtion.VisibleIndex = 4;
+            // 
+            // colDTotalRow
+            // 
+            this.colDTotalRow.Caption = "Sub-Row";
+            this.colDTotalRow.Name = "colDTotalRow";
+            this.colDTotalRow.OptionsColumn.AllowEdit = false;
+            this.colDTotalRow.Visible = true;
+            this.colDTotalRow.VisibleIndex = 5;
+            // 
+            // colDStartPosition
+            // 
+            this.colDStartPosition.Caption = "Start Position";
+            this.colDStartPosition.FieldName = "StartPosition";
+            this.colDStartPosition.Name = "colDStartPosition";
+            this.colDStartPosition.OptionsColumn.AllowEdit = false;
+            this.colDStartPosition.Visible = true;
+            this.colDStartPosition.VisibleIndex = 6;
+            // 
+            // colDPositionLength
+            // 
+            this.colDPositionLength.Caption = "Length";
+            this.colDPositionLength.FieldName = "PositiionLength";
+            this.colDPositionLength.Name = "colDPositionLength";
+            this.colDPositionLength.OptionsColumn.AllowEdit = false;
+            this.colDPositionLength.Visible = true;
+            this.colDPositionLength.VisibleIndex = 7;
+            // 
+            // colDDesc
+            // 
+            this.colDDesc.Caption = "Description";
+            this.colDDesc.FieldName = "Desc";
+            this.colDDesc.Name = "colDDesc";
+            this.colDDesc.OptionsColumn.AllowEdit = false;
+            this.colDDesc.Visible = true;
+            this.colDDesc.VisibleIndex = 8;
+            // 
+            // repositoryItemButtonEdit1
+            // 
+            this.repositoryItemButtonEdit1.AutoHeight = false;
+            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Delete", -1, true, true, true, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit1.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
+            this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(1448, 32);
+            this.btnClose.TabIndex = 30;
+            this.btnClose.Text = "Close View Mapping";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmImportDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1448, 749);
+            this.Controls.Add(this.pnViewMapping);
             this.Controls.Add(this.gdDetail);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -499,6 +694,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Data";
             this.Load += new System.EventHandler(this.frmImportDataView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeleteDetailColumn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -515,6 +711,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMonth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.pnViewMapping.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMapping)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,9 +757,25 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txtStartRowCol;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnViewMapping;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.TextEdit txtFileNameConditon;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnDeleteDetailColumn;
+        private System.Windows.Forms.Panel pnViewMapping;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
+        private DevExpress.XtraGrid.GridControl gridViewMapping;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colDDID;
+        private DevExpress.XtraGrid.Columns.GridColumn colDNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDColumnNo;
+        private DevExpress.XtraGrid.Columns.GridColumn colDColExcel;
+        private DevExpress.XtraGrid.Columns.GridColumn colDParent;
+        private DevExpress.XtraGrid.Columns.GridColumn colDCondtion;
+        private DevExpress.XtraGrid.Columns.GridColumn colDTotalRow;
+        private DevExpress.XtraGrid.Columns.GridColumn colDStartPosition;
+        private DevExpress.XtraGrid.Columns.GridColumn colDPositionLength;
+        private DevExpress.XtraGrid.Columns.GridColumn colDDesc;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

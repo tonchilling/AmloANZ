@@ -53,12 +53,12 @@
             this.colImportFile = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAction = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImportD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnImportDaily = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colImported = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFromTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colImportD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnImportDaily = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblDetail = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnClose = new DevExpress.XtraEditors.ButtonEdit();
@@ -97,7 +97,6 @@
             this.lblCreateDate = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lblCreateUser = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
@@ -279,6 +278,27 @@
             this.colAction.VisibleIndex = 8;
             this.colAction.Width = 80;
             // 
+            // colImportD
+            // 
+            this.colImportD.Caption = "Import Daily";
+            this.colImportD.ColumnEdit = this.btnImportDaily;
+            this.colImportD.MaxWidth = 80;
+            this.colImportD.Name = "colImportD";
+            this.colImportD.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.colImportD.Visible = true;
+            this.colImportD.VisibleIndex = 9;
+            this.colImportD.Width = 61;
+            // 
+            // btnImportDaily
+            // 
+            this.btnImportDaily.AutoHeight = false;
+            this.btnImportDaily.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Import", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnImportDaily.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnImportDaily.Name = "btnImportDaily";
+            this.btnImportDaily.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnImportDaily.Click += new System.EventHandler(this.btnImportDaily_Click);
+            // 
             // colImported
             // 
             this.colImported.Caption = "Imported";
@@ -312,27 +332,6 @@
             this.colHID.Caption = "HID";
             this.colHID.FieldName = "HID";
             this.colHID.Name = "colHID";
-            // 
-            // colImportD
-            // 
-            this.colImportD.Caption = "Import Daily";
-            this.colImportD.ColumnEdit = this.btnImportDaily;
-            this.colImportD.MaxWidth = 80;
-            this.colImportD.Name = "colImportD";
-            this.colImportD.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.colImportD.Visible = true;
-            this.colImportD.VisibleIndex = 9;
-            this.colImportD.Width = 61;
-            // 
-            // btnImportDaily
-            // 
-            this.btnImportDaily.AutoHeight = false;
-            this.btnImportDaily.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Import", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnImportDaily.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnImportDaily.Name = "btnImportDaily";
-            this.btnImportDaily.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-            this.btnImportDaily.Click += new System.EventHandler(this.btnImportDaily_Click);
             // 
             // lblDetail
             // 
@@ -595,6 +594,7 @@
             this.btnSearch.Size = new System.Drawing.Size(111, 43);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Visible = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // labelControl4
@@ -679,7 +679,6 @@
             this.panelControl4.Controls.Add(this.lblCreateDate);
             this.panelControl4.Controls.Add(this.labelControl1);
             this.panelControl4.Controls.Add(this.lblCreateUser);
-            this.panelControl4.Controls.Add(this.labelControl14);
             this.panelControl4.Controls.Add(this.labelControl13);
             this.panelControl4.Location = new System.Drawing.Point(842, 78);
             this.panelControl4.Name = "panelControl4";
@@ -760,17 +759,6 @@
             this.lblCreateUser.TabIndex = 6;
             this.lblCreateUser.Text = "xxxx xxxxx";
             this.lblCreateUser.Click += new System.EventHandler(this.labelControl15_Click);
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl14.Location = new System.Drawing.Point(5, 32);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(97, 21);
-            this.labelControl14.TabIndex = 4;
-            this.labelControl14.Text = "Save State";
             // 
             // labelControl13
             // 
@@ -1048,7 +1036,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl lblCreateUser;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnImport;
