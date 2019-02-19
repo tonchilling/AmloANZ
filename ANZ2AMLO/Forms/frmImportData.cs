@@ -407,6 +407,29 @@ namespace ANZ1AMLO.Forms
             btnImport.Enabled = true;
         }
 
+        private void btnImportDaily_Click(object sender, EventArgs e)
+        {
+            ANZ2AMLO.Forms.frmImportDataDaily frmDaily = new ANZ2AMLO.Forms.frmImportDataDaily();
+
+
+            dvFilter = new DataView(dtDetail);
+            dvFilter.RowFilter = string.Format("DID='{0}'", gridView1.GetFocusedRowCellValue("DID").ToString());
+            if (dvFilter != null && dvFilter.Count>0)
+            {
+                ANZ2AMLO.Forms.frmImportDataDaily.ReportSourceID = ddlReportCondition.SelectedValue.ToString();
+                ANZ2AMLO.Forms.frmImportDataDaily.KeyWord = dvFilter[0]["KeyWord"].ToString();
+                  frmDaily.ShowDialog();
+
+
+            
+
+            }
+
+
+          
+           // DevExpress.XtraEditors.XtraMessageBox.Show("ImportDaily!!", "ImportDaily", MessageBoxButtons.OK);
+        }
+
         private void gdView_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e)
         {
 

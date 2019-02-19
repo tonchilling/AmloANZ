@@ -38,7 +38,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.colDID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtType = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -49,9 +49,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtKeyWord = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSourceFile = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.colFromTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImported = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,22 +71,22 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.txtImport = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtFileCount = new DevExpress.XtraEditors.TextEdit();
             this.textEdit5 = new DevExpress.XtraEditors.MemoEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKeyWord.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSourceFile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImport.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,14 +103,15 @@
             this.colHID.FieldName = "HID";
             this.colHID.Name = "colHID";
             // 
-            // textEdit4
+            // txtType
             // 
-            this.textEdit4.EditValue = "P";
-            this.textEdit4.Location = new System.Drawing.Point(440, 25);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(99, 20);
-            this.textEdit4.TabIndex = 7;
+            this.txtType.EditValue = "";
+            this.txtType.Enabled = false;
+            this.txtType.Location = new System.Drawing.Point(440, 25);
+            this.txtType.MenuManager = this.barManager1;
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(99, 20);
+            this.txtType.TabIndex = 7;
             // 
             // barManager1
             // 
@@ -203,14 +204,15 @@
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "Type";
             // 
-            // textEdit3
+            // txtKeyWord
             // 
-            this.textEdit3.EditValue = "like (\'%Counterrate%\')";
-            this.textEdit3.Location = new System.Drawing.Point(288, 25);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(146, 20);
-            this.textEdit3.TabIndex = 5;
+            this.txtKeyWord.EditValue = "";
+            this.txtKeyWord.Enabled = false;
+            this.txtKeyWord.Location = new System.Drawing.Point(288, 25);
+            this.txtKeyWord.MenuManager = this.barManager1;
+            this.txtKeyWord.Name = "txtKeyWord";
+            this.txtKeyWord.Size = new System.Drawing.Size(146, 20);
+            this.txtKeyWord.TabIndex = 5;
             // 
             // labelControl3
             // 
@@ -220,14 +222,15 @@
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Keyword ";
             // 
-            // textEdit2
+            // txtSourceFile
             // 
-            this.textEdit2.EditValue = "Counter Rate-Daily";
-            this.textEdit2.Location = new System.Drawing.Point(12, 25);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(270, 20);
-            this.textEdit2.TabIndex = 3;
+            this.txtSourceFile.EditValue = "";
+            this.txtSourceFile.Enabled = false;
+            this.txtSourceFile.Location = new System.Drawing.Point(12, 25);
+            this.txtSourceFile.MenuManager = this.barManager1;
+            this.txtSourceFile.Name = "txtSourceFile";
+            this.txtSourceFile.Size = new System.Drawing.Size(270, 20);
+            this.txtSourceFile.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -370,14 +373,14 @@
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.textEdit8);
             this.panelControl1.Controls.Add(this.labelControl11);
-            this.panelControl1.Controls.Add(this.textEdit9);
+            this.panelControl1.Controls.Add(this.txtImport);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.textEdit1);
-            this.panelControl1.Controls.Add(this.textEdit4);
+            this.panelControl1.Controls.Add(this.txtFileCount);
+            this.panelControl1.Controls.Add(this.txtType);
             this.panelControl1.Controls.Add(this.labelControl4);
-            this.panelControl1.Controls.Add(this.textEdit3);
+            this.panelControl1.Controls.Add(this.txtKeyWord);
             this.panelControl1.Controls.Add(this.labelControl3);
-            this.panelControl1.Controls.Add(this.textEdit2);
+            this.panelControl1.Controls.Add(this.txtSourceFile);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.textEdit5);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -426,14 +429,15 @@
             this.labelControl11.TabIndex = 11;
             this.labelControl11.Text = "Import";
             // 
-            // textEdit9
+            // txtImport
             // 
-            this.textEdit9.EditValue = "F (2) ,P (8)";
-            this.textEdit9.Location = new System.Drawing.Point(650, 25);
-            this.textEdit9.MenuManager = this.barManager1;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(104, 20);
-            this.textEdit9.TabIndex = 10;
+            this.txtImport.EditValue = "";
+            this.txtImport.Enabled = false;
+            this.txtImport.Location = new System.Drawing.Point(650, 25);
+            this.txtImport.MenuManager = this.barManager1;
+            this.txtImport.Name = "txtImport";
+            this.txtImport.Size = new System.Drawing.Size(104, 20);
+            this.txtImport.TabIndex = 10;
             // 
             // labelControl1
             // 
@@ -443,14 +447,15 @@
             this.labelControl1.TabIndex = 9;
             this.labelControl1.Text = "Files Count";
             // 
-            // textEdit1
+            // txtFileCount
             // 
-            this.textEdit1.EditValue = "10";
-            this.textEdit1.Location = new System.Drawing.Point(545, 25);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(99, 20);
-            this.textEdit1.TabIndex = 8;
+            this.txtFileCount.EditValue = "";
+            this.txtFileCount.Enabled = false;
+            this.txtFileCount.Location = new System.Drawing.Point(545, 25);
+            this.txtFileCount.MenuManager = this.barManager1;
+            this.txtFileCount.Name = "txtFileCount";
+            this.txtFileCount.Size = new System.Drawing.Size(99, 20);
+            this.txtFileCount.TabIndex = 8;
             // 
             // textEdit5
             // 
@@ -474,10 +479,11 @@
             this.Name = "frmImportDataDaily";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Import Daily";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.frmImportDataDaily_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKeyWord.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSourceFile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).EndInit();
@@ -485,8 +491,8 @@
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtImport.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -497,7 +503,7 @@
 
         private DevExpress.XtraGrid.Columns.GridColumn colDID;
         private DevExpress.XtraGrid.Columns.GridColumn colHID;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtType;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
@@ -521,13 +527,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFromTotal;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit txtImport;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtFileCount;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtKeyWord;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtSourceFile;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl8;

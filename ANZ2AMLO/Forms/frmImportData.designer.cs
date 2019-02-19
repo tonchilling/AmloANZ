@@ -35,6 +35,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportData));
             this.btnView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gdView = new DevExpress.XtraGrid.GridControl();
@@ -52,6 +57,8 @@
             this.colFromTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImportD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnImportDaily = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.lblDetail = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.btnClose = new DevExpress.XtraEditors.ButtonEdit();
@@ -111,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImportDaily)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdViewDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -154,6 +162,8 @@
             this.gdView.Location = new System.Drawing.Point(2, 85);
             this.gdView.MainView = this.gridView1;
             this.gdView.Name = "gdView";
+            this.gdView.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btnImportDaily});
             this.gdView.Size = new System.Drawing.Size(1390, 548);
             this.gdView.TabIndex = 0;
             this.gdView.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -172,6 +182,7 @@
             this.colImportFile,
             this.colStatus,
             this.colAction,
+            this.colImportD,
             this.colImported,
             this.colFromTotal,
             this.colDID,
@@ -196,7 +207,7 @@
             this.colFileName.Name = "colFileName";
             this.colFileName.Visible = true;
             this.colFileName.VisibleIndex = 1;
-            this.colFileName.Width = 50;
+            this.colFileName.Width = 454;
             // 
             // colKeyWord
             // 
@@ -206,6 +217,7 @@
             this.colKeyWord.Name = "colKeyWord";
             this.colKeyWord.Visible = true;
             this.colKeyWord.VisibleIndex = 2;
+            this.colKeyWord.Width = 100;
             // 
             // colType
             // 
@@ -225,6 +237,7 @@
             this.colFileCount.Name = "colFileCount";
             this.colFileCount.Visible = true;
             this.colFileCount.VisibleIndex = 4;
+            this.colFileCount.Width = 80;
             // 
             // colFileList
             // 
@@ -234,6 +247,7 @@
             this.colFileList.Name = "colFileList";
             this.colFileList.Visible = true;
             this.colFileList.VisibleIndex = 5;
+            this.colFileList.Width = 150;
             // 
             // colImportFile
             // 
@@ -243,6 +257,7 @@
             this.colImportFile.Name = "colImportFile";
             this.colImportFile.Visible = true;
             this.colImportFile.VisibleIndex = 6;
+            this.colImportFile.Width = 80;
             // 
             // colStatus
             // 
@@ -251,6 +266,7 @@
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 7;
+            this.colStatus.Width = 80;
             // 
             // colAction
             // 
@@ -261,6 +277,7 @@
             this.colAction.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.colAction.Visible = true;
             this.colAction.VisibleIndex = 8;
+            this.colAction.Width = 80;
             // 
             // colImported
             // 
@@ -269,7 +286,8 @@
             this.colImported.MaxWidth = 80;
             this.colImported.Name = "colImported";
             this.colImported.Visible = true;
-            this.colImported.VisibleIndex = 9;
+            this.colImported.VisibleIndex = 10;
+            this.colImported.Width = 80;
             // 
             // colFromTotal
             // 
@@ -279,7 +297,8 @@
             this.colFromTotal.Name = "colFromTotal";
             this.colFromTotal.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colFromTotal.Visible = true;
-            this.colFromTotal.VisibleIndex = 10;
+            this.colFromTotal.VisibleIndex = 11;
+            this.colFromTotal.Width = 80;
             // 
             // colDID
             // 
@@ -293,6 +312,27 @@
             this.colHID.Caption = "HID";
             this.colHID.FieldName = "HID";
             this.colHID.Name = "colHID";
+            // 
+            // colImportD
+            // 
+            this.colImportD.Caption = "Import Daily";
+            this.colImportD.ColumnEdit = this.btnImportDaily;
+            this.colImportD.MaxWidth = 80;
+            this.colImportD.Name = "colImportD";
+            this.colImportD.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.colImportD.Visible = true;
+            this.colImportD.VisibleIndex = 9;
+            this.colImportD.Width = 61;
+            // 
+            // btnImportDaily
+            // 
+            this.btnImportDaily.AutoHeight = false;
+            this.btnImportDaily.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "Import", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnImportDaily.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnImportDaily.Name = "btnImportDaily";
+            this.btnImportDaily.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnImportDaily.Click += new System.EventHandler(this.btnImportDaily_Click);
             // 
             // lblDetail
             // 
@@ -912,6 +952,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnImportDaily)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdViewDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -1019,5 +1060,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnView;
         private System.Windows.Forms.ComboBox ddlReportCondition;
         private DevExpress.XtraEditors.TextEdit txtPeriod;
+        private DevExpress.XtraGrid.Columns.GridColumn colImportD;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnImportDaily;
     }
 }
