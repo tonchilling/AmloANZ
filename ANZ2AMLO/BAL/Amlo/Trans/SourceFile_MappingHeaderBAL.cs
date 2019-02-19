@@ -97,6 +97,12 @@ namespace BAL.Amlo.Trans
             string yyyyMMdd = string.Format("{0}{1}{2}", createDate.Year.ToString(),createDate.Month.ToString("##00"), createDate.Day.ToString("##00"));
             return dao.FindByKeyWord(keyWord, yyyyMMdd);
         }
+        public DataSet   FindByKeyWord(string keyWord, DateTime createDate,string DID)
+        {
+
+            string yyyyMMdd = string.Format("{0}{1}{2}", createDate.Year.ToString(), createDate.Month.ToString("##00"), createDate.Day.ToString("##00"));
+            return dao.FindByKeyWord(keyWord, yyyyMMdd, DID);
+        }
         public DataTable GetDropDownList()
         {
             utilDAL = new UtilDAL();

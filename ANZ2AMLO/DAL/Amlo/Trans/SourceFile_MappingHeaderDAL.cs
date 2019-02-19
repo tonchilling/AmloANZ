@@ -66,15 +66,26 @@ namespace DAL.Amlo.Trans
                    
                     if (dto.Data != null && dto.Data.Tables.Count > 1)
                     {
+
+
                         ExcecuteNoneQuery(string.Format("sp_Temp_{0}_Insert"
                             , dto.Data.Tables[0].Rows[0]["KeyWord"].ToString())
                             , dto.Data.Tables[1]);
+
+
+
                     }
+
                 }
 
-                ImportDTO tempDTO = new ImportDTO();
+              
+
+                    ImportDTO tempDTO = new ImportDTO();
                 tempDTO.ImportID = ImportID;
                 tempDTO.CREATE_BY = createBy;
+
+              
+
                 ExcecuteNoneQueryObj("sp_Importing_TempToCustomer", tempDTO);
                 
                 isCan = true;
@@ -87,6 +98,82 @@ namespace DAL.Amlo.Trans
             return isCan;
         }
 
+
+        public bool ImportAll(List<ImportDTO> dataList
+                              ,DataTable dtImportHeader
+                              , DataTable dtImportDetail)
+        {
+            isCan = false;
+            DataTable dtDetail = null;
+            try
+            {
+                string createBy = "";
+                OpenConection();
+                ExcecuteNoneQueryObj("sp_Temp_ClearAll", null);
+                isCan = true;
+                CloseConnection();
+
+                OpenConection();
+                string ImportID = Guid.NewGuid().ToString();
+                foreach (ImportDTO dto in dataList)
+                {
+                    createBy = dto.CREATE_BY != null ? dto.CREATE_BY : "";
+                    dto.Data.Tables[1].Columns.Add("ImportID");
+
+                    foreach (DataRow dr in dto.Data.Tables[1].Rows)
+                    {
+                        dr["ImportID"] = ImportID;
+
+                    }
+
+                    if (dto.Data != null && dto.Data.Tables.Count > 1)
+                    {
+
+
+                        ExcecuteNoneQuery(string.Format("sp_Temp_{0}_Insert"
+                            , dto.Data.Tables[0].Rows[0]["KeyWord"].ToString())
+                            , dto.Data.Tables[1]);
+
+
+
+                    }
+
+                }
+
+                if (dtImportHeader != null
+                    && dtImportHeader.Rows.Count > 0 )
+                {
+                    dtImportHeader.Rows[0]["ImportID"] = ImportID;
+                    ExcecuteNoneQuery("sp_T_ImportHeader_Insert", dtImportHeader);
+                }
+
+
+
+                if (dtImportDetail != null
+                    && dtImportDetail.Rows.Count > 0)
+                {
+                    dtImportDetail.Rows[0]["ImportID"] = ImportID;
+                    ExcecuteNoneQuery("sp_T_ImportDetail_Insert", dtImportDetail);
+                }
+
+
+                ImportDTO tempDTO = new ImportDTO();
+                tempDTO.ImportID = ImportID;
+                tempDTO.CREATE_BY = createBy;
+
+
+
+                ExcecuteNoneQueryObj("sp_Importing_TempToCustomer", tempDTO);
+
+                isCan = true;
+                CloseConnection();
+            }
+            catch (Exception ex)
+            { }
+            finally
+            { }
+            return isCan;
+        }
 
         public override bool Update(DataTable dt)
         {
@@ -223,7 +310,39 @@ namespace DAL.Amlo.Trans
             return dtObj;
         }
 
+        public DataSet FindByKeyWord(string tbName, string createDate,string DID)
+        {
+            isCan = false;
+            DataSet ds = null;
+            DataTable dtObj = null;
+            List<SqlParameter> paramList = null;
+            SqlParameter parameters = null;
+            try
+            {
+                ds = new DataSet();
+                   paramList = new List<SqlParameter>();
+                parameters = new SqlParameter("@CreateDate", createDate);
+             
 
+               
+                OpenConection();
+                dtObj = ExcecuteParamToDataTable(string.Format("sp_{0}_FindByPK", tbName), paramList);
+                ds.Tables.Add(dtObj.Copy());
+                paramList = new List<SqlParameter>();
+                parameters = new SqlParameter("@CreateDate", createDate);
+                paramList.Add(parameters);
+                parameters = new SqlParameter("@DID", DID);
+                paramList.Add(parameters);
+                dtObj = ExcecuteParamToDataTable(string.Format("sp_T_ImportHeader_FindByDate", tbName), paramList);
+                ds.Tables.Add(dtObj.Copy());
+                CloseConnection();
+            }
+            catch (Exception ex)
+            { }
+            finally
+            { }
+            return ds;
+        }
         public DataSet  FindHeaderAndDetailPK(DataTable dt)
         {
             isCan = false;

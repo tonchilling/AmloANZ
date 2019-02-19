@@ -22,6 +22,7 @@ namespace DTO.Amlo.Importing
             dt.Columns.Add("SourceFileHID");
             dt.Columns.Add("TranDate");
             dt.Columns.Add("ReportName");
+            dt.Columns.Add("Remark");
             dt.Columns.Add("CREATE_BY");
             dt.Columns.Add("CREATE_DATE");
             dt.Columns.Add("UPDATE_BY");
@@ -48,6 +49,7 @@ namespace DTO.Amlo.Importing
             dt.Columns.Add("UPDATE_BY");
             dt.Columns.Add("UPDATE_DATE");
             dt.Columns.Add("ROW_STATE");
+            dt.Columns.Add("Remark");
 
             return dt;
         }

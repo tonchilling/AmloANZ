@@ -81,7 +81,26 @@ namespace BAL.Amlo.Importing
         }
 
 
+        public bool Import(List<ImportDTO> objectList
+                            ,DataTable importHeaderDT
+                           , DataTable importDetailDT)
+        {
 
+
+
+            try
+            {
+                dao.ImportAll(objectList, importHeaderDT, importDetailDT);
+            }
+            catch (Exception ex)
+            {
+
+                Log("ImportTempBAL.Import", "High", ex.ToString());
+            }
+            finally
+            { }
+            return isCan;
+        }
 
 
         public override DataTable FindByColumn(object dto)

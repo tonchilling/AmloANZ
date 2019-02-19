@@ -59,12 +59,33 @@ namespace ANZ2AMLO.Forms
         private void btnSearch_Click(object sender, EventArgs e)
         {
             bal = new SourceFile_MappingHeaderBAL();
-           
 
-            dtDetailList = bal.FindByKeyWord(string.Format("Temp_{0}", ddlSourceType.SelectedValue.ToString()), dtTranDate.Value);
+            DataView dvFilter = new DataView(dtDetail);
+            dvFilter.RowFilter = string.Format("KeyWord='{0}'", ddlSourceType.SelectedValue.ToString());
+
+             ds = bal.FindByKeyWord(string.Format("Temp_{0}", ddlSourceType.SelectedValue.ToString()), dtTranDate.Value, dvFilter[0]["DID"].ToString());
+
+            
             splashScreenManager1.ShowWaitForm();
-            LoadDetail(dtDetailList);
-            splashScreenManager1.CloseWaitForm();
+
+
+            if (ds.Tables.Count > 1 && ds.Tables[1].Rows.Count > 0)
+            {
+                dtDetailList = ds.Tables[0];
+
+               
+                LoadDetail(dtDetailList);
+                txtRemark.Text = ds.Tables[1].Rows[0]["Remark"].ToString();
+                splashScreenManager1.CloseWaitForm();
+            }
+            else {
+                ClearDetailData();
+
+
+                splashScreenManager1.CloseWaitForm();
+                DevExpress.XtraEditors.XtraMessageBox.Show("Not Found Data!!", "VIEW", MessageBoxButtons.OK);
+            }
+          
         }
 
         private void ddlReportCondition_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,6 +143,12 @@ namespace ANZ2AMLO.Forms
             txtStartRowCol.Text = "";
             txtSheetName.Text = "";
             txtRemark.Text = "";
+
+            gridView1.Columns.Clear();
+            gdDetail.DataSource = null;
+
+            gdDetail.RefreshDataSource();
+            gdDetail.Refresh();
         }
         void LoadDetail(DataTable dt)
         {
