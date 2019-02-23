@@ -101,7 +101,7 @@ namespace ANZ1AMLO.Forms
             lblCreateUser.Text = MyLogin.FName + " " + MyLogin.LName;
             if (lastedImportDT.Rows.Count > 0)
             {
-                lblCreateDate.Text = lastedImportDT.Rows[0]["UPDATE_DATE"].ToString();
+                lblCreateDate.Text = lastedImportDT.Rows[0]["CREATE_DATE"].ToString();
                 lblCreateReportName.Text = lastedImportDT.Rows[0]["ReportName"].ToString();
             }
             else

@@ -245,7 +245,7 @@ namespace ANZ2AMLO.Forms
             bal = new SourceFile_MappingHeaderBAL();
 
 
-            ds = bal.FindHeaderAndDetailPK(ReportSourceID);
+            ds = bal.FindHeaderAndDetailPK(ReportSourceID, MyLogin.USER_LOGIN);
 
             if (ds != null)
             {

@@ -10,6 +10,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BAL.Amlo.Trans;
 using DTO.Amlo.Importing;
+
+using DevExpress.XtraEditors;
+using DevExpress.Xpf.Core;
+using DevExpress.XtraSplashScreen;
+using DTO.Amlo.Export;
+using DTO.Amlo.Autorizing;
+
 namespace ANZ2AMLO.Forms
 {
     public partial class frmImportDataAll : DevExpress.XtraEditors.XtraForm
@@ -154,7 +161,7 @@ namespace ANZ2AMLO.Forms
             allFile = new List<string>();
 
             bal = new SourceFile_MappingHeaderBAL();
-            ds = bal.FindHeaderAndDetailPK(null);
+            ds = bal.FindHeaderAndDetailPK(null, MyLogin.USER_LOGIN);
 
             if (ds != null)
             {

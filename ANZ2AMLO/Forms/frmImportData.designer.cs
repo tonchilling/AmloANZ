@@ -583,6 +583,7 @@
             this.btnExportFile.Size = new System.Drawing.Size(110, 43);
             this.btnExportFile.TabIndex = 9;
             this.btnExportFile.Text = "Export Excel";
+            this.btnExportFile.Visible = false;
             this.btnExportFile.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btnSearch

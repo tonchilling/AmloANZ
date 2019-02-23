@@ -161,6 +161,11 @@ namespace ANZ2AMLO.Forms
             pnViewMapping.Visible = false;
         }
 
+        private void btnExportFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
         void LoadMonth()
         {
             txtMonth.Text = string.Format("{0}:{1}", dtTranDate.Value.Month, DTO.Util.Utility.GetShortMonth(dtTranDate.Value.Month));

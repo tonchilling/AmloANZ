@@ -14,7 +14,7 @@ using DTO.Amlo.Importing;
 using DevExpress.XtraEditors;
 using DevExpress.Xpf.Core;
 using DevExpress.XtraSplashScreen;
-
+using DTO.Amlo.Autorizing;
 namespace ANZ1AMLO.Forms
 {
     public partial class frmViewImporting : DevExpress.XtraEditors.XtraForm
@@ -46,7 +46,7 @@ namespace ANZ1AMLO.Forms
             allFile = new List<string>();
 
             bal = new SourceFile_MappingHeaderBAL();
-            ds = bal.FindHeaderAndDetailPK(null);
+            ds = bal.FindHeaderAndDetailPK(null, MyLogin.USER_LOGIN);
 
             if (ds != null)
             {

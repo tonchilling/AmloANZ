@@ -103,7 +103,7 @@ namespace ANZ2AMLO.Forms
         {
 
             bal = new SourceFile_MappingHeaderBAL();
-            ds = bal.FindHeaderAndDetailPK("1");
+            ds = bal.FindHeaderAndDetailPK("1", MyLogin.USER_LOGIN);
             if (ds != null)
             {
                 dtH = ds.Tables[0];
