@@ -79,7 +79,24 @@ namespace BAL.Amlo.Importing
             { }
             return isCan;
         }
+        public bool Import(List<ImportDTO> objectList, DataTable importHeaderDT)
+        {
 
+
+
+            try
+            {
+                dao.ImportAll(objectList, importHeaderDT);
+            }
+            catch (Exception ex)
+            {
+
+                Log("ImportTempBAL.Import", "High", ex.ToString());
+            }
+            finally
+            { }
+            return isCan;
+        }
 
         public bool Import(List<ImportDTO> objectList
                             ,DataTable importHeaderDT

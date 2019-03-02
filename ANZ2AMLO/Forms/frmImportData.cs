@@ -25,6 +25,7 @@ namespace ANZ1AMLO.Forms
         DataSet ds = null;
         DataView dvFilter = null;
         DataTable dtH, dtDetail,dtDetail_Col;
+        DataTable dtTImportHeader = null;
         ImportTempBAL importBal = null;
         string browseFolder = "";
         List<string> allFile;
@@ -161,7 +162,7 @@ namespace ANZ1AMLO.Forms
             DataTable tempHeaderDT, tempDetailDT;
             ImportDTO importDTO = null;
             string[] filePaths = null;
-            DataTable dtTImportHeader = ImportDTO.ImportHeaderData();
+             dtTImportHeader = ImportDTO.ImportHeaderData();
             DataTable dtTImportDetail = ImportDTO.ImportDetailData();
 
             if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to Verify Existing File?", "Verify Existing File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -226,12 +227,8 @@ namespace ANZ1AMLO.Forms
                                 ds.Tables.Add(tempDetailDT.Copy());
 
 
-                                importDTO.Data = ds.Copy();
-                                dsAll.Add(importDTO);
-                                gridView1.SetRowCellValue(row, "FileCount", (object)dr["FileCount"].ToString());
-                                gridView1.SetRowCellValue(row, "FileNameList", (object)dr["FileNameList"].ToString());
-                                
                                 DataRow drTImportDetail = dtTImportDetail.NewRow();
+                                drTImportDetail["SourceFileHID"] = dr["HID"].ToString();
                                 drTImportDetail["SourceFileDID"] = dr["DID"].ToString();
                                 drTImportDetail["FilesCount"] = selectFile.Count;
                                 drTImportDetail["FileNameList"] = dr["SourceFileRefName"].ToString();
@@ -241,6 +238,16 @@ namespace ANZ1AMLO.Forms
                                 drTImportDetail["TotalRec"] = dr["FromTotal"];
                                 drTImportDetail["CREATE_BY"] = MyLogin.USER_LOGIN;
                                 dtTImportDetail.Rows.Add(drTImportDetail);
+                                ds.Tables.Add(dtTImportDetail.Copy());
+
+
+
+                                importDTO.Data = ds.Copy();
+                                dsAll.Add(importDTO);
+                                gridView1.SetRowCellValue(row, "FileCount", (object)dr["FileCount"].ToString());
+                                gridView1.SetRowCellValue(row, "FileNameList", (object)dr["FileNameList"].ToString());
+                                
+                              
                             }
                             
                         }
@@ -310,7 +317,7 @@ namespace ANZ1AMLO.Forms
             if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to save?", "SAVING", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 splashScreenManager1.ShowWaitForm();
-                importBal.Import(dsAll);
+                importBal.Import(dsAll, dtTImportHeader);
                 splashScreenManager1.CloseWaitForm();
 
                 DevExpress.XtraEditors.XtraMessageBox.Show("Save data completely!!", "SAVING", MessageBoxButtons.OK);
@@ -412,7 +419,7 @@ namespace ANZ1AMLO.Forms
             if (DevExpress.XtraEditors.XtraMessageBox.Show("Do you want to Import All?", "Import ALL", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 splashScreenManager1.ShowWaitForm();
-                importBal.Import(dsAll);
+                importBal.Import(dsAll,dtTImportHeader);
                 splashScreenManager1.CloseWaitForm();
                 DevExpress.XtraEditors.XtraMessageBox.Show("Import All completely!!", "Import ALL", MessageBoxButtons.OK);
             }

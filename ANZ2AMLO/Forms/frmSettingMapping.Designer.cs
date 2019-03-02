@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSettingMapping));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -42,6 +42,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -78,6 +79,7 @@
             this.colDNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDColumnNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDColExcel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDParent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDCondtion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDTotalRow = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -217,9 +219,9 @@
             // gdView
             // 
             this.gdView.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gdView.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode3});
             this.gdView.Location = new System.Drawing.Point(0, 40);
             this.gdView.MainView = this.gridView1;
             this.gdView.Name = "gdView";
@@ -384,8 +386,10 @@
             // gdDetail
             // 
             gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
             this.gdDetail.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode1,
+            gridLevelNode2});
             this.gdDetail.Location = new System.Drawing.Point(12, 19);
             this.gdDetail.MainView = this.gridView2;
             this.gdDetail.MenuManager = this.barManager1;
@@ -404,6 +408,7 @@
             this.colDNo,
             this.colDColumnNo,
             this.colDColExcel,
+            this.colDColumnName,
             this.colDParent,
             this.colDCondtion,
             this.colDTotalRow,
@@ -446,13 +451,21 @@
             this.colDColExcel.Visible = true;
             this.colDColExcel.VisibleIndex = 2;
             // 
+            // colDColumnName
+            // 
+            this.colDColumnName.Caption = "Column Name";
+            this.colDColumnName.FieldName = "ColumnName";
+            this.colDColumnName.Name = "colDColumnName";
+            this.colDColumnName.Visible = true;
+            this.colDColumnName.VisibleIndex = 3;
+            // 
             // colDParent
             // 
             this.colDParent.Caption = "Parent";
             this.colDParent.FieldName = "ParentID";
             this.colDParent.Name = "colDParent";
             this.colDParent.Visible = true;
-            this.colDParent.VisibleIndex = 3;
+            this.colDParent.VisibleIndex = 4;
             // 
             // colDCondtion
             // 
@@ -460,14 +473,15 @@
             this.colDCondtion.FieldName = "Condition";
             this.colDCondtion.Name = "colDCondtion";
             this.colDCondtion.Visible = true;
-            this.colDCondtion.VisibleIndex = 4;
+            this.colDCondtion.VisibleIndex = 5;
             // 
             // colDTotalRow
             // 
             this.colDTotalRow.Caption = "Sub-Row";
+            this.colDTotalRow.FieldName = "TotalRow";
             this.colDTotalRow.Name = "colDTotalRow";
             this.colDTotalRow.Visible = true;
-            this.colDTotalRow.VisibleIndex = 5;
+            this.colDTotalRow.VisibleIndex = 6;
             // 
             // colDStartPosition
             // 
@@ -475,15 +489,15 @@
             this.colDStartPosition.FieldName = "StartPosition";
             this.colDStartPosition.Name = "colDStartPosition";
             this.colDStartPosition.Visible = true;
-            this.colDStartPosition.VisibleIndex = 6;
+            this.colDStartPosition.VisibleIndex = 7;
             // 
             // colDPositionLength
             // 
             this.colDPositionLength.Caption = "Length";
-            this.colDPositionLength.FieldName = "PositiionLength";
+            this.colDPositionLength.FieldName = "PositionLength";
             this.colDPositionLength.Name = "colDPositionLength";
             this.colDPositionLength.Visible = true;
-            this.colDPositionLength.VisibleIndex = 7;
+            this.colDPositionLength.VisibleIndex = 8;
             // 
             // colDDesc
             // 
@@ -491,7 +505,7 @@
             this.colDDesc.FieldName = "Desc";
             this.colDDesc.Name = "colDDesc";
             this.colDDesc.Visible = true;
-            this.colDDesc.VisibleIndex = 8;
+            this.colDDesc.VisibleIndex = 9;
             // 
             // gridColumn1
             // 
@@ -501,7 +515,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 9;
+            this.gridColumn1.VisibleIndex = 10;
             // 
             // btnDeleteDetailColumn
             // 
@@ -743,5 +757,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbType;
         private DevExpress.XtraEditors.ButtonEdit btnClosePop;
+        private DevExpress.XtraGrid.Columns.GridColumn colDColumnName;
     }
 }

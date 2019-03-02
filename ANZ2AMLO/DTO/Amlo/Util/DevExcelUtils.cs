@@ -211,7 +211,9 @@ namespace DTO.Util
                                 dvFilterBySplit.RowFilter = string.Format("Condition='{0}'", dr["Condition"].ToString());
                                 string dataForsplit = tempData.Replace(dr["Condition"].ToString(), "")
                                                                                 .Replace("|", "")
-                                                                                .Replace("/", "").Trim();
+                                                                                .Replace(":/", "")
+                                                                                .Replace("}", "")
+                                                                                .Replace("{", "").Trim();
                                 foreach (DataRowView drForsplite in dvFilterBySplit)
                                 {
                                     int maxLength = Converting.StringToInt(drForsplite["PositionLength"].ToString());
@@ -228,8 +230,10 @@ namespace DTO.Util
                             else
                             {
                                 newRow[dr["ColumnName"].ToString()] = tempData.Replace(dr["Condition"].ToString(), "")
-                                                                                 .Replace("|", "")
-                                                                                 .Replace("/", "").Trim();
+                                                                                  .Replace("|", "")
+                                                                                 .Replace(":/", "")
+                                                                                .Replace("}", "")
+                                                                                .Replace("{", "").Trim();
                             }
                             break;
                         }
@@ -245,7 +249,9 @@ namespace DTO.Util
                                 {
                                     newRow[drForsplite["ColumnName"].ToString()] = tempData.Replace(drForsplite["Condition"].ToString(), "")
                                                                             .Replace("|", "")
-                                                                            .Replace("/", "").Trim();
+                                                                                 .Replace(":/", "")
+                                                                                .Replace("}", "")
+                                                                                .Replace("{", "").Trim();
                                     break;
                                 }
 

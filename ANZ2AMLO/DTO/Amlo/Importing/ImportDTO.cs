@@ -37,6 +37,7 @@ namespace DTO.Amlo.Importing
             DataTable dt = new DataTable();
 
             dt.Columns.Add("ImportID");
+            dt.Columns.Add("SourceFileHID");
             dt.Columns.Add("SourceFileDID");
             dt.Columns.Add("FilesCount");
             dt.Columns.Add("FileNameList");
