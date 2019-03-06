@@ -47,15 +47,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.navBarControlMain = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarAuthorize = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarUserGroup = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarUser = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarMenuGroup = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarSubMenu = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarMenuPermission = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItemUserProfile = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navImportAll = new DevExpress.XtraNavBar.NavBarItem();
+            this.menuViewImport = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarCustomerMaster = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarTransactionMaster = new DevExpress.XtraNavBar.NavBarItem();
@@ -68,6 +62,13 @@
             this.navTransactionMasterMapping = new DevExpress.XtraNavBar.NavBarItem();
             this.navReportMapping = new DevExpress.XtraNavBar.NavBarItem();
             this.navReportFilterRole = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarAuthorize = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarUserGroup = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarUser = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarMenuGroup = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSubMenu = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarMenuPermission = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemUserProfile = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.pnLogin = new System.Windows.Forms.Panel();
@@ -79,7 +80,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.menuViewImport = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControlMain)).BeginInit();
@@ -241,7 +241,7 @@
             // 
             // navBarControlMain
             // 
-            this.navBarControlMain.ActiveGroup = this.navBarGroup1;
+            this.navBarControlMain.ActiveGroup = this.navBarAuthorize;
             this.navBarControlMain.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.navBarControlMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControlMain.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
@@ -278,61 +278,9 @@
             this.navBarControlMain.Text = "navBarControl1";
             this.navBarControlMain.View = new DevExpress.XtraNavBar.ViewInfo.SkinNavigationPaneViewInfoRegistrator();
             // 
-            // navBarAuthorize
-            // 
-            this.navBarAuthorize.Caption = "Authorize";
-            this.navBarAuthorize.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
-            this.navBarAuthorize.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarUserGroup),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarUser),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMenuGroup),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSubMenu),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMenuPermission),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUserProfile)});
-            this.navBarAuthorize.Name = "navBarAuthorize";
-            // 
-            // navBarUserGroup
-            // 
-            this.navBarUserGroup.Caption = "User Group";
-            this.navBarUserGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarUserGroup.ImageOptions.LargeImage")));
-            this.navBarUserGroup.Name = "navBarUserGroup";
-            this.navBarUserGroup.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
-            // 
-            // navBarUser
-            // 
-            this.navBarUser.Caption = "Users";
-            this.navBarUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarUser.ImageOptions.LargeImage")));
-            this.navBarUser.Name = "navBarUser";
-            this.navBarUser.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarUser_LinkClicked);
-            // 
-            // navBarMenuGroup
-            // 
-            this.navBarMenuGroup.Caption = "Menu Group";
-            this.navBarMenuGroup.Name = "navBarMenuGroup";
-            this.navBarMenuGroup.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMenuGroup_LinkClicked);
-            // 
-            // navBarSubMenu
-            // 
-            this.navBarSubMenu.Caption = "Sub Menu";
-            this.navBarSubMenu.Name = "navBarSubMenu";
-            this.navBarSubMenu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarSubMenu_LinkClicked);
-            // 
-            // navBarMenuPermission
-            // 
-            this.navBarMenuPermission.Caption = "Menu Permission";
-            this.navBarMenuPermission.Name = "navBarMenuPermission";
-            this.navBarMenuPermission.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMenuPermission_LinkClicked);
-            // 
-            // navBarItemUserProfile
-            // 
-            this.navBarItemUserProfile.Caption = "User Profile";
-            this.navBarItemUserProfile.Name = "navBarItemUserProfile";
-            this.navBarItemUserProfile.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUserProfile_LinkClicked);
-            // 
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Import File";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsText;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navImportAll),
@@ -345,6 +293,13 @@
             this.navImportAll.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navImportAll.ImageOptions.LargeImage")));
             this.navImportAll.Name = "navImportAll";
             this.navImportAll.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navImportAll_LinkClicked);
+            // 
+            // menuViewImport
+            // 
+            this.menuViewImport.Caption = "View Import";
+            this.menuViewImport.ImageOptions.ImageUri.Uri = "Preview";
+            this.menuViewImport.Name = "menuViewImport";
+            this.menuViewImport.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.menuViewImport_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -439,6 +394,58 @@
             this.navReportFilterRole.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navReportFilterRole.ImageOptions.LargeImage")));
             this.navReportFilterRole.Name = "navReportFilterRole";
             this.navReportFilterRole.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navReportFilterRole_LinkClicked);
+            // 
+            // navBarAuthorize
+            // 
+            this.navBarAuthorize.Caption = "Authorize";
+            this.navBarAuthorize.Expanded = true;
+            this.navBarAuthorize.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
+            this.navBarAuthorize.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarUserGroup),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarUser),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMenuGroup),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSubMenu),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMenuPermission),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemUserProfile)});
+            this.navBarAuthorize.Name = "navBarAuthorize";
+            // 
+            // navBarUserGroup
+            // 
+            this.navBarUserGroup.Caption = "User Group";
+            this.navBarUserGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarUserGroup.ImageOptions.LargeImage")));
+            this.navBarUserGroup.Name = "navBarUserGroup";
+            this.navBarUserGroup.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked_1);
+            // 
+            // navBarUser
+            // 
+            this.navBarUser.Caption = "Users";
+            this.navBarUser.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarUser.ImageOptions.LargeImage")));
+            this.navBarUser.Name = "navBarUser";
+            this.navBarUser.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarUser_LinkClicked);
+            // 
+            // navBarMenuGroup
+            // 
+            this.navBarMenuGroup.Caption = "Menu Group";
+            this.navBarMenuGroup.Name = "navBarMenuGroup";
+            this.navBarMenuGroup.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMenuGroup_LinkClicked);
+            // 
+            // navBarSubMenu
+            // 
+            this.navBarSubMenu.Caption = "Sub Menu";
+            this.navBarSubMenu.Name = "navBarSubMenu";
+            this.navBarSubMenu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarSubMenu_LinkClicked);
+            // 
+            // navBarMenuPermission
+            // 
+            this.navBarMenuPermission.Caption = "Menu Permission";
+            this.navBarMenuPermission.Name = "navBarMenuPermission";
+            this.navBarMenuPermission.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMenuPermission_LinkClicked);
+            // 
+            // navBarItemUserProfile
+            // 
+            this.navBarItemUserProfile.Caption = "User Profile";
+            this.navBarItemUserProfile.Name = "navBarItemUserProfile";
+            this.navBarItemUserProfile.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemUserProfile_LinkClicked);
             // 
             // navBarItem3
             // 
@@ -565,13 +572,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(258, 30);
             this.txtUserName.TabIndex = 32;
-            // 
-            // menuViewImport
-            // 
-            this.menuViewImport.Caption = "View Import";
-            this.menuViewImport.ImageOptions.ImageUri.Uri = "Preview";
-            this.menuViewImport.Name = "menuViewImport";
-            this.menuViewImport.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.menuViewImport_LinkClicked);
             // 
             // frmMain
             // 
